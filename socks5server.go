@@ -135,7 +135,6 @@ func handleConnection(frontconn net.Conn) {
 
     nom := int(buf1[1])  // number of methods
     methods := readBytes(frontconn, nom)
-
     var support bool
     for _, meth := range methods {
         if meth == 0x00 {
@@ -147,11 +146,12 @@ func handleConnection(frontconn net.Conn) {
     //检查Ip白名单
     frontAddrInfo := strings.SplitN(frontaddr,":",2)
     ipString := frontAddrInfo[0]
+    log.Println("ipString:",ipString)
     if len(ServerCfgInfo.WhiteList) > 0 && !StringInArray(ipString,ServerCfgInfo.WhiteList) {
         support = false
         log.Println("Denied Ip[",ipString,"] connection")
     }
-
+    log.Printf("support:%t\n",support)
     if !support {
         // X'FF' NO ACCEPTABLE METHODS
         frontconn.Write([]byte{0x05, 0xff})
