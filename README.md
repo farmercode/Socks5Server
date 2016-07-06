@@ -1,5 +1,5 @@
 # Socks5Server
-一个用golang写的socks5代理服务器，主要代理功能代码沿用了[physacco/socks5](https://github.com/physacco/socks5)的，然后再原来的基础上面增加了Ip白名单和json配置功能。
+一个用golang写的socks5代理服务器，主要代理功能代码沿用了[physacco/socks5](https://github.com/physacco/socks5)的，然后再原来的基础上面增加了Ip白名单和json配置功能。关于socks5协议可以查维基百科上面关于[socks协议](https://zh.wikipedia.org/wiki/SOCKS)的介绍。
 
 #安装
 
