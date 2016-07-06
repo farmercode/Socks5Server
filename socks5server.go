@@ -162,8 +162,8 @@ func handleConnection(frontconn net.Conn) {
     frontconn.Write([]byte{0x05, 0x00})
 
     // recv command packet
-    log.Printf("buf3 version %x,RSV %x\n",buf3[0],buf3[2])
     buf3 := readBytes(frontconn, 4)
+    log.Printf("buf3 version %x,RSV %x\n",buf3[0],buf3[2])
     protocolCheck(buf3[0] == 0x05)  // VER
     protocolCheck(buf3[2] == 0x00)  // RSV
 
