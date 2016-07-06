@@ -12,6 +12,7 @@ import (
     "strings"
     "strconv"
     "./config/"
+    debug "runtime/debug"
 )
 
 type ServerConfig struct  {
@@ -123,6 +124,7 @@ func handleConnection(frontconn net.Conn) {
     defer func() {
         if err := recover(); err != nil {
             log.Println("ERROR frontend", frontconn, frontaddr, err)
+            debug.PrintStack()
         }
         frontconn.Close()
         log.Println("DISCONNECTED frontend", frontconn, frontaddr)
