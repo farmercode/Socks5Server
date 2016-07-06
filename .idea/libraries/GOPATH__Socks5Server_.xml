@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="GOPATH &lt;Socks5Server&gt;">
+    <CLASSES>
+      <root url="file://$USER_HOME$/gocode/src/github.com" />
+      <root url="file://$USER_HOME$/gocode/src/golang.org" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+    <excluded>
+      <root url="file://$PROJECT_DIR$" />
+    </excluded>
+  </library>
+</component>

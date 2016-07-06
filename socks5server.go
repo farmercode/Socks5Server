@@ -130,6 +130,7 @@ func handleConnection(frontconn net.Conn) {
 
     // receive auth packet
     buf1 := readBytes(frontconn, 2)
+    log.Printf("client version:%x\n",buf1[0])
     protocolCheck(buf1[0] == 0x05)  // VER
 
     nom := int(buf1[1])  // number of methods
@@ -161,6 +162,7 @@ func handleConnection(frontconn net.Conn) {
     frontconn.Write([]byte{0x05, 0x00})
 
     // recv command packet
+    log.Printf("buf3 version %x,RSV %x\n",buf3[0],buf3[2])
     buf3 := readBytes(frontconn, 4)
     protocolCheck(buf3[0] == 0x05)  // VER
     protocolCheck(buf3[2] == 0x00)  // RSV
