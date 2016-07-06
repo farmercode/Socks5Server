@@ -16,6 +16,6 @@
 
 #配置文件
 config.json为配置文件
-Listen为要代理服务器监听ip和端口，格式为host:port, 如  `127.0.0.01:9527`
-WhiteList为Ip白名单，当WhiteList为空时，所有Ip地址都可以连接，WhiteList不为空时，只允许WhiteList中的Ip进行代理,如 `["127.0.0.1","180.168.85.190"]` 
+ **Listen** 为要代理服务器监听ip和端口，格式为 **host:port** , 如  `127.0.0.01:9527`  
+ **WhiteList**为Ip白名单，当WhiteList为空时，所有Ip地址都可以连接，WhiteList不为空时，只允许WhiteList中的Ip进行代理,如 `["127.0.0.1","180.168.85.190"]` 
 
